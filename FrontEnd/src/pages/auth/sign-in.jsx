@@ -6,9 +6,56 @@ import {
   Typography,
 } from "@material-tailwind/react";
 import { Link } from "react-router-dom";
-
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export function SignIn() {
+  const navigate = useNavigate();
+    function handleStart(){
+        navigate('/dashboard/home');
+    }
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [rememberMe, setRememberMe] = useState(false);
+  const [newsletter, setNewsletter] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsLoading(true);
+    setError("");
+
+    try {
+      const response = await fetch("http://localhost:3000/auth/api/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email,
+          password,
+          rememberMe,
+          subscribeToNewsletter: newsletter,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message || "Login failed");
+      }
+
+      // Handle successful login (e.g., redirect or store token)
+      console.log("Login successful", data);
+      // You might want to redirect here or handle the auth token
+    } catch (err) {
+      setError(err.message || "An error occurred during login");
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
     <section className="m-8 flex gap-4">
       <div className="w-full lg:w-3/5 mt-24">
@@ -16,7 +63,12 @@ export function SignIn() {
           <Typography variant="h2" className="font-bold mb-4">Sign In</Typography>
           <Typography variant="paragraph" color="blue-gray" className="text-lg font-normal">Enter your email and password to Sign In.</Typography>
         </div>
-        <form className="mt-8 mb-2 mx-auto w-80 max-w-screen-lg lg:w-1/2">
+        <form onSubmit={handleStart} className="mt-8 mb-2 mx-auto w-80 max-w-screen-lg lg:w-1/2">
+          {error && (
+            <Typography color="red" className="mb-4 text-center">
+              {error}
+            </Typography>
+          )}
           <div className="mb-1 flex flex-col gap-6">
             <Typography variant="small" color="blue-gray" className="-mb-3 font-medium">
               Your email
@@ -24,10 +76,13 @@ export function SignIn() {
             <Input
               size="lg"
               placeholder="name@mail.com"
-              className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
+              className="!border-t-blue-gray-200 focus:!border-t-gray-900"
               labelProps={{
                 className: "before:content-none after:content-none",
               }}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
             />
             <Typography variant="small" color="blue-gray" className="-mb-3 font-medium">
               Password
@@ -36,10 +91,13 @@ export function SignIn() {
               type="password"
               size="lg"
               placeholder="********"
-              className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
+              className="!border-t-blue-gray-200 focus:!border-t-gray-900"
               labelProps={{
                 className: "before:content-none after:content-none",
               }}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
             />
           </div>
           <Checkbox
@@ -59,9 +117,11 @@ export function SignIn() {
               </Typography>
             }
             containerProps={{ className: "-ml-2.5" }}
+            checked={rememberMe}
+            onChange={(e) => setRememberMe(e.target.checked)}
           />
-          <Button className="mt-6" fullWidth>
-            Sign In
+          <Button type="submit" className="mt-6" fullWidth disabled={isLoading}>
+            {isLoading ? "Signing In..." : "Sign In"}
           </Button>
 
           <div className="flex items-center justify-between gap-2 mt-6">
@@ -76,6 +136,8 @@ export function SignIn() {
                 </Typography>
               }
               containerProps={{ className: "-ml-2.5" }}
+              checked={newsletter}
+              onChange={(e) => setNewsletter(e.target.checked)}
             />
             <Typography variant="small" className="font-medium text-gray-900">
               <a href="#">
@@ -110,7 +172,6 @@ export function SignIn() {
             <Link to="/auth/sign-up" className="text-gray-900 ml-1">Create account</Link>
           </Typography>
         </form>
-
       </div>
       <div className="w-2/5 h-full hidden lg:block">
         <img
@@ -118,7 +179,6 @@ export function SignIn() {
           className="h-full w-full object-cover rounded-3xl"
         />
       </div>
-
     </section>
   );
 }
