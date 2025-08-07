@@ -29,7 +29,7 @@ const Navbar = () => {
         <div
           className="logo"
           style={{
-            marginRight: '10px',
+            marginRight: '20px',
             fontSize: '28px',
             color: '#ff4d94', // Brighter pink
             transform: 'scale(1.2)',
@@ -60,6 +60,11 @@ const Navbar = () => {
         style={{
           display: 'flex',
           gap: '1.8rem',
+          position: 'relative',
+            left: '400px',
+            fontFamily: 'Quicksand, sans-serif',
+            fontWeight: '500',
+            fontSize: '35px',
         }}
       >
         {['Home', 'About', 'Contact us'].map((text, idx) => (
@@ -69,8 +74,9 @@ const Navbar = () => {
             style={{
               textDecoration: 'none',
               color: '#444',
-              fontWeight: 500,
-              fontSize: '16px',
+             
+              fontSize: '20px',
+              fontWeight: 'bold',
               transition: 'color 0.2s',
             }}
             onMouseOver={(e) => (e.target.style.color = '#ff69b4')}
@@ -86,7 +92,7 @@ const Navbar = () => {
         className="signup-btn"
         style={{
           backgroundColor: '#ff69b4',
-          color: '#FF5C8A',
+          color: '880E4F',
           border: 'none',
           padding: '0.6rem 1.6rem',
           borderRadius: '999px',
