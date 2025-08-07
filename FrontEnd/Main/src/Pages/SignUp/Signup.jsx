@@ -1,28 +1,30 @@
 // The registration page for the application
 import React from 'react';
+import './SignUp.css';
+
 
 function Register() {
   return (
-    <div>
+    <div className='register-container'>
       <h1>Register</h1>
       <form>
         <label>
-          First name:
+          {/* First name: */}
           <input type="text" name="firstname" placeholder='First Name'/>
         </label>
         <br />
         <label>
-          Last name:
+          {/* Last name: */}
           <input type="text" name="lastname" placeholder='Last Name'/>
         </label>
         <br />
         <label>
-          Password:
+          {/* Password: */}
           <input type="password" name="password" placeholder='Password'/>
         </label>
         <br />
         <label>
-          Confirm Password:
+          {/* Confirm Password: */}
           <input type="password" name="confirmPassword" placeholder='Confirm Password'/>
         </label>
         <br />

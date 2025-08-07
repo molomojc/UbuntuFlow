@@ -1,0 +1,133 @@
+/*
+  General Styles
+  - Applies a responsive and clean foundation to the page.
+*/
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*
+  Login Container
+  - Sets up the main container for the split-screen layout.
+*/
+.LogIn {
+  display: grid;
+  grid-template-columns: 55% 40%;
+  min-height: 100vh;
+  background-color: #fce4ec; /* Light pink background for the whole page */
+}
+
+/*
+  Side Image Container
+  - Handles the image on the left side of the screen.
+*/
+.sideImage {
+  display: none; /* Hidden by default on mobile */
+  flex: 1;
+  overflow: hidden;
+}
+
+#loginIMG {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the container */
+}
+
+/*
+  Login Form Container
+  - Styles the login form section on the right.
+*/
+.LoginForm {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background-color: #f7b7cf; /* Darker pink for the form container */
+  border-radius: 15px;
+  margin: 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.LoginForm h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+/*
+  Form Elements
+  - Styles inputs, labels, and buttons.
+*/
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 350px;
+}
+
+label {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: #555;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-top: 0.5rem;
+  box-sizing: border-box; /* Ensures padding doesn't affect width */
+}
+
+input[type="checkbox"] {
+  margin-right: 0.5rem;
+}
+
+button[type="submit"] {
+  background-color: #e91e63; /* A vibrant pink for the button */
+  color: #fff;
+  border: none;
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  margin-top: 1rem;
+}
+
+button[type="submit"]:hover {
+  background-color: #c2185b;
+}
+
+.LoginForm p {
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+
+.LoginForm p a, .LoginForm p .Link {
+  color: #e91e63;
+  text-decoration: none;
+}
+
+.LoginForm p a:hover, .LoginForm p .Link:hover {
+  text-decoration: underline;
+}
+
+/*
+  Media Queries for Responsiveness
+  - Shows the image on larger screens.
+*/
+@media (min-width: 768px) {
+  .sideImage {
+    display: block; /* Show the image on screens wider than 768px */
+  }
+}
