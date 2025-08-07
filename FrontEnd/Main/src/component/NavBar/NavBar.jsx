@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 //import image from 
-//import logo from '../../assets/logo.svg'; // Assuming you have a logo image
+import logo from '../../assets/Logo.png'; // Assuming you have a logo image
 
 const Navbar = () => {
   return (
@@ -35,15 +35,19 @@ const Navbar = () => {
             transform: 'scale(1.2)',
           }}
         >
-          ❤️
+            <img
+                src={logo}
+                alt="Logo"
+                style={{ width: '40px', height: '40px', borderRadius: '50%' }}
+            />
         </div>
         <div
           className="brand-name"
           style={{
             fontSize: '22px',
             fontWeight: '700',
-            color: '#333',
-            fontFamily: 'Segoe UI, sans-serif',
+            color: '#880E4F',
+            fontFamily: 'Poppins, sans-serif',
           }}
         >
           UbuntuFlow
@@ -82,7 +86,7 @@ const Navbar = () => {
         className="signup-btn"
         style={{
           backgroundColor: '#ff69b4',
-          color: '#fff',
+          color: '#FF5C8A',
           border: 'none',
           padding: '0.6rem 1.6rem',
           borderRadius: '999px',
