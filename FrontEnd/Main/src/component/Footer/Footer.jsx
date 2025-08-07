@@ -1,182 +1,233 @@
-// The FOOTER of UbuntuFlow wweb application
-
-import React, { useState } from 'react';
-
-// The main App component containing the footer
-const App = () => {
-  const [email, setEmail] = useState('');
-
-  const handleSubscribe = () => {
-    // In a real application, you would handle the subscription logic here,
-    // like sending the email to a server.
-    alert(`Subscribing with email: ${email}`);
-    setEmail('');
-  };
-
-  return (
-    <div className="ubuntuflow-footer-container">
-      <style jsx="true">{`
-        .ubuntuflow-footer-container {
-          background-color: #f7e7e9;
-          font-family: 'Playfair Display', serif; /* Use a serif font for a classic look */
-          color: #333;
-          padding: 4rem 2rem;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          text-align: center;
-        }
-
-        /* Subscription section styling */
-        .subscription-section {
-          margin-bottom: 2rem;
-          max-width: 400px;
-          width: 100%;
-        }
-
-        .subscription-section h3 {
-          font-size: 1.5rem;
-          margin-bottom: 1rem;
-          text-decoration: underline;
-        }
-
-        .subscription-form {
-          display: flex;
-          justify-content: center;
-          gap: 0.5rem;
-          flex-wrap: wrap;
-        }
-
-        .email-input {
-          padding: 0.75rem 1rem;
-          border: 1px solid #ccc;
-          border-radius: 5px;
-          flex-grow: 1;
-          min-width: 200px;
-        }
-
-        .subscribe-button {
-          background-color: #000;
-          color: #fff;
-          padding: 0.75rem 2rem;
-          border: none;
-          border-radius: 5px;
-          cursor: pointer;
-          font-weight: bold;
-          transition: background-color 0.3s ease;
-        }
-
-        .subscribe-button:hover {
-          background-color: #333;
-        }
-
-        /* Contact and address section styling */
-        .contact-section {
-          margin-bottom: 2rem;
-          text-align: left;
-          max-width: 600px;
-          width: 100%;
-        }
-
-        .contact-section p {
-          margin: 0.5rem 0;
-          font-size: 1.1rem;
-        }
-        
-        .contact-section strong {
-          font-size: 1.2rem;
-          font-weight: bold;
-          margin-right: 0.5rem;
-        }
-        
-        .contact-section .contact-info {
-            font-size: 1rem;
-        }
-        
-        /* Divider line */
-        .divider {
-          width: 100%;
-          max-width: 600px;
-          border: 0;
-          height: 1px;
-          background-color: #333;
-          margin: 2rem 0;
-        }
-
-        /* Social media section styling */
-        .social-media-section {
-          display: flex;
-          justify-content: center;
-          gap: 2rem;
-          flex-wrap: wrap;
-        }
-
-        .social-media-item {
-          display: flex;
-          align-items: center;
-          gap: 0.5rem;
-          color: #333;
-          text-decoration: none;
-          font-size: 1.2rem;
-        }
-        
-        .social-media-item svg {
-          width: 24px;
-          height: 24px;
-        }
-      `}</style>
-      
-      <div className="subscription-section">
-        <h3>Want to know what we are up to ?</h3>
-        <div className="subscription-form">
-          <input
-            type="email"
-            placeholder="Email.."
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className="email-input"
-          />
-          <button onClick={handleSubscribe} className="subscribe-button">
-            Subscribe
-          </button>
+export default () => {
+    const footerNavs = [
+      {
+        label: "Resources",
+        items: [
+          {
+            href: "javascript:void()",
+            name: "contact",
+          },
+          {
+            href: "javascript:void()",
+            name: "Support",
+          },
+          {
+            href: "javascript:void()",
+            name: "Documentation",
+          },
+          {
+            href: "javascript:void()",
+            name: "Pricing",
+          },
+        ],
+      },
+      {
+        label: "About",
+        items: [
+          {
+            href: "javascript:void()",
+            name: "Terms",
+          },
+          {
+            href: "javascript:void()",
+            name: "License",
+          },
+          {
+            href: "javascript:void()",
+            name: "Privacy",
+          },
+          {
+            href: "javascript:void()",
+            name: "About US",
+          },
+        ],
+      },
+      {
+        label: "Explore",
+        items: [
+          {
+            href: "javascript:void()",
+            name: "Showcase",
+          },
+          {
+            href: "javascript:void()",
+            name: "Roadmap",
+          },
+          {
+            href: "javascript:void()",
+            name: "Languages",
+          },
+          {
+            href: "javascript:void()",
+            name: "Blog",
+          },
+        ],
+      },
+      {
+        label: "Company",
+        items: [
+          {
+            href: "javascript:void()",
+            name: "Partners",
+          },
+          {
+            href: "javascript:void()",
+            name: "Team",
+          },
+          {
+            href: "javascript:void()",
+            name: "Careers",
+          },
+        ],
+      },
+    ];
+  
+    return (
+      <footer className="pt-10" style={{ backgroundColor: '#F9D5D3' }}>
+        <div className="max-w-screen-xl mx-auto px-4 md:px-8">
+          <div className="justify-between items-center gap-12 md:flex">
+            <div className="flex-1 max-w-lg">
+              <h3 className="text-2xl font-bold" style={{ color: '#880E4F' }}>
+                Get our beautiful newsletter straight to your inbox.
+              </h3>
+            </div>
+            <div className="flex-1 mt-6 md:mt-0">
+              <form
+                onSubmit={(e) => e.preventDefault()}
+                className="flex items-center gap-x-3 md:justify-end"
+              >
+                <div className="relative">
+                  <svg
+                    className="w-6 h-6 text-gray-400 absolute left-3 inset-y-0 my-auto"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
+                    />
+                  </svg>
+                  <input
+                    type="email"
+                    required
+                    placeholder="Enter your email"
+                    className="w-full pl-12 pr-3 py-2 text-gray-500 bg-white outline-none border focus:border-indigo-600 shadow-sm rounded-lg"
+                  />
+                </div>
+                <button className="block w-auto py-3 px-4 font-medium text-sm text-center text-white bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 active:shadow-none rounded-lg shadow">
+                  Subscribe
+                </button>
+              </form>
+            </div>
+          </div>
+          <div className="flex-1 mt-16 space-y-6 justify-between sm:flex md:space-y-0">
+            {footerNavs.map((item, idx) => (
+              <ul className="space-y-4 text-gray-300" key={idx}>
+                <h4 className="text-gray-200 font-semibold sm:pb-2" style={{ color: '#880E4F' }}>
+                  {item.label}
+                </h4>
+                {item.items.map((el, idx) => (
+                  <li key={idx}>
+                    <a
+                      href={el.href}
+                      className="duration-150 hover:text-gray-700" 
+                      style={{ color: '#F9FAFB' }}
+                    >
+                      {el.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            ))}
+          </div>
+          <div className="mt-10 py-10 border-t border-gray-700 items-center justify-between sm:flex"  >
+            <p className="text-gray-300"   style={{ color: '#F9FAFB' }}>
+              © 2022 Float UI Inc. All rights reserved.
+            </p>
+            <div className="flex items-center gap-x-6 text-gray-400 mt-6">
+              <a href="javascript:void()">
+                <svg
+                  className="w-6 h-6 hover:text-gray-500 duration-150"
+                  fill="none"
+                  viewBox="0 0 48 48"
+                >
+                  <g clip-path="url(#a)">
+                    <path
+                      fill="currentColor"
+                      d="M48 24C48 10.745 37.255 0 24 0S0 10.745 0 24c0 11.979 8.776 21.908 20.25 23.708v-16.77h-6.094V24h6.094v-5.288c0-6.014 3.583-9.337 9.065-9.337 2.625 0 5.372.469 5.372.469v5.906h-3.026c-2.981 0-3.911 1.85-3.911 3.75V24h6.656l-1.064 6.938H27.75v16.77C39.224 45.908 48 35.978 48 24z"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="a">
+                      <path fill="#fff" d="M0 0h48v48H0z" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </a>
+              <a href="javascript:void()">
+                <svg
+                  className="w-6 h-6 hover:text-gray-500 duration-150"
+                  fill="none"
+                  viewBox="0 0 48 48"
+                >
+                  <g clip-path="url(#clip0_17_80)">
+                    <path
+                      fill="currentColor"
+                      d="M15.1 43.5c18.11 0 28.017-15.006 28.017-28.016 0-.422-.01-.853-.029-1.275A19.998 19.998 0 0048 9.11c-1.795.798-3.7 1.32-5.652 1.546a9.9 9.9 0 004.33-5.445 19.794 19.794 0 01-6.251 2.39 9.86 9.86 0 00-16.788 8.979A27.97 27.97 0 013.346 6.299 9.859 9.859 0 006.393 19.44a9.86 9.86 0 01-4.462-1.228v.122a9.844 9.844 0 007.901 9.656 9.788 9.788 0 01-4.442.169 9.867 9.867 0 009.195 6.843A19.75 19.75 0 010 39.078 27.937 27.937 0 0015.1 43.5z"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_17_80">
+                      <path fill="#fff" d="M0 0h48v48H0z" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </a>
+              <a href="javascript:void()">
+                <svg
+                  className="w-6 h-6 hover:text-gray-500 duration-150"
+                  fill="none"
+                  viewBox="0 0 48 48"
+                >
+                  <g fill="currentColor" clip-path="url(#clip0_910_44)">
+                    <path
+                      fill-rule="evenodd"
+                      d="M24 1A24.086 24.086 0 008.454 6.693 23.834 23.834 0 00.319 21.044a23.754 23.754 0 003.153 16.172 23.98 23.98 0 0012.938 10.29c1.192.221 1.641-.518 1.641-1.146 0-.628-.024-2.45-.032-4.442-6.676 1.443-8.087-2.817-8.087-2.817-1.089-2.766-2.663-3.493-2.663-3.493-2.178-1.478.163-1.45.163-1.45 2.413.17 3.68 2.461 3.68 2.461 2.138 3.648 5.616 2.593 6.983 1.976.215-1.545.838-2.596 1.526-3.193-5.333-.6-10.937-2.647-10.937-11.791a9.213 9.213 0 012.472-6.406c-.246-.6-1.069-3.026.234-6.322 0 0 2.015-.64 6.602 2.446a22.904 22.904 0 0112.017 0c4.583-3.086 6.594-2.446 6.594-2.446 1.307 3.288.484 5.714.238 6.322a9.194 9.194 0 012.476 6.414c0 9.163-5.615 11.183-10.957 11.772.859.742 1.626 2.193 1.626 4.421 0 3.193-.028 5.762-.028 6.548 0 .636.433 1.38 1.65 1.146a23.98 23.98 0 0012.938-10.291 23.754 23.754 0 003.151-16.175A23.834 23.834 0 0039.56 6.69 24.086 24.086 0 0024.009 1H24z"
+                      clip-rule="evenodd"
+                    />
+                    <path d="M9.089 35.264c-.052.119-.243.154-.398.071-.155-.083-.27-.237-.214-.36.056-.122.242-.154.397-.07.155.082.274.24.215.359zM10.063 36.343a.4.4 0 01-.493-.11c-.155-.167-.187-.396-.068-.499.12-.102.334-.055.489.11.155.167.19.396.072.499zM11.008 37.714c-.147.103-.397 0-.536-.206a.395.395 0 010-.569c.147-.098.397 0 .537.202.139.202.143.47 0 .573zM12.292 39.042c-.131.146-.397.106-.616-.091-.219-.198-.27-.467-.139-.609.131-.142.397-.102.624.091.226.194.27.466.131.609zM14.092 39.816c-.06.186-.33.269-.6.19-.27-.08-.449-.3-.397-.49.051-.19.326-.277.6-.19.274.087.449.297.397.49zM16.056 39.95c0 .194-.223.36-.509.364-.286.004-.52-.154-.52-.348 0-.193.222-.36.508-.363.286-.004.52.15.52.347zM17.884 39.646c.036.194-.163.395-.45.443-.285.047-.536-.067-.572-.257-.035-.19.171-.395.45-.447.278-.05.536.068.572.261z" />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_910_44">
+                      <path fill="#fff" d="M0 0h48v48H0z" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </a>
+              <a href="javascript:void()">
+                <svg
+                  className="w-6 h-6 hover:text-gray-500 duration-150"
+                  fill="currentColor"
+                  viewBox="0 0 48 48"
+                >
+                  <g clip-path="url(#clip0_17_63)">
+                    <path d="M24 4.322c6.413 0 7.172.028 9.694.14 2.343.104 3.61.497 4.453.825 1.116.432 1.922.957 2.756 1.791.844.844 1.36 1.64 1.79 2.756.329.844.723 2.12.826 4.454.112 2.53.14 3.29.14 9.693 0 6.413-.028 7.172-.14 9.694-.103 2.344-.497 3.61-.825 4.453-.431 1.116-.957 1.922-1.79 2.756-.845.844-1.642 1.36-2.757 1.791-.844.328-2.119.722-4.453.825-2.532.112-3.29.14-9.694.14-6.413 0-7.172-.028-9.694-.14-2.343-.103-3.61-.497-4.453-.825-1.115-.431-1.922-.956-2.756-1.79-.844-.844-1.36-1.641-1.79-2.757-.329-.844-.723-2.119-.826-4.453-.112-2.531-.14-3.29-.14-9.694 0-6.412.028-7.172.14-9.694.103-2.343.497-3.609.825-4.453.431-1.115.957-1.921 1.79-2.756.845-.844 1.642-1.36 2.757-1.79.844-.329 2.119-.722 4.453-.825 2.522-.113 3.281-.141 9.694-.141zM24 0c-6.516 0-7.331.028-9.89.14-2.55.113-4.304.526-5.822 1.116-1.585.619-2.926 1.435-4.257 2.775-1.34 1.332-2.156 2.672-2.775 4.247C.666 9.806.253 11.55.141 14.1.028 16.669 0 17.484 0 24s.028 7.331.14 9.89c.113 2.55.526 4.304 1.116 5.822.619 1.585 1.435 2.925 2.775 4.257a11.732 11.732 0 004.247 2.765c1.528.591 3.272 1.003 5.822 1.116 2.56.112 3.375.14 9.89.14 6.516 0 7.332-.028 9.891-.14 2.55-.113 4.303-.525 5.822-1.116a11.732 11.732 0 004.247-2.765 11.732 11.732 0 002.766-4.247c.59-1.528 1.003-3.272 1.115-5.822.113-2.56.14-3.375.14-9.89 0-6.516-.027-7.332-.14-9.891-.112-2.55-.525-4.303-1.115-5.822-.591-1.594-1.407-2.935-2.747-4.266a11.732 11.732 0 00-4.247-2.765C38.194.675 36.45.262 33.9.15 31.331.028 30.516 0 24 0z" />
+                    <path d="M24 11.672c-6.806 0-12.328 5.522-12.328 12.328 0 6.806 5.522 12.328 12.328 12.328 6.806 0 12.328-5.522 12.328-12.328 0-6.806-5.522-12.328-12.328-12.328zm0 20.325a7.998 7.998 0 010-15.994 7.998 7.998 0 010 15.994zM39.694 11.184a2.879 2.879 0 11-2.878-2.878 2.885 2.885 0 012.878 2.878z" />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_17_63">
+                      <path d="M0 0h48v48H0z" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </a>
+            </div>
+          </div>
         </div>
-      </div>
-      
-      <div className="contact-section">
-        <p>
-          <strong>ADDRESS :</strong> Gauteng, Johannesbrug, University of Johannesburg(APK)
-        </p>
-        <p>
-          <strong>CONTACT:</strong> <span className="contact-info">support@ubuntu-flow.com | +27824822611</span>
-        </p>
-      </div>
-      
-      <hr className="divider" />
-      
-      <div className="social-media-section">
-        <a href="#" className="social-media-item">
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M16.9904 1.9961H7.01C4.808 1.9961 3.0194 3.7847 3.0194 5.9867V16.0124C3.0194 18.2144 4.808 19.9981 7.01 19.9981H16.9904C19.1924 19.9981 20.981 18.2144 20.981 16.0124V5.9867C20.981 3.7847 19.1924 1.9961 16.9904 1.9961ZM18.9904 16.0124C18.9904 17.1169 18.1009 18.0064 16.9904 18.0064H7.01C5.8995 18.0064 5.01 17.1169 5.01 16.0124V5.9867C5.01 4.8762 5.8995 3.9961 7.01 3.9961H16.9904C18.1009 3.9961 18.9904 4.8762 18.9904 5.9867V16.0124Z" fill="currentColor"/>
-                <path d="M12.0002 8.0051C9.7982 8.0051 7.9997 9.7937 7.9997 12.0001C7.9997 14.2021 9.7982 15.9907 12.0002 15.9907C14.2022 15.9907 15.9907 14.2021 15.9907 12.0001C15.9907 9.7937 14.2022 8.0051 12.0002 8.0051ZM12.0002 14.0041C10.8957 14.0041 10.0062 13.1146 10.0062 12.0001C10.0062 10.8856 10.8957 10.0001 12.0002 10.0001C13.1147 10.0001 14.0042 10.8856 14.0042 12.0001C14.0042 13.1146 13.1147 14.0041 12.0002 14.0041Z" fill="currentColor"/>
-                <path d="M17.0003 5.0001C16.4474 5.0001 16.0002 4.5529 16.0002 4.0001C16.0002 3.4473 16.4474 3.0001 17.0003 3.0001C17.5531 3.0001 18.0003 3.4473 18.0003 4.0001C18.0003 4.5529 17.5531 5.0001 17.0003 5.0001Z" fill="currentColor"/>
-            </svg>
-          Facebook
-        </a>
-        <a href="#" className="social-media-item">
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12.0002 2C6.4862 2 2 6.4862 2 12.0002C2 17.5142 6.4862 22.0002 12.0002 22.0002C17.5142 22.0002 22.0002 17.5142 22.0002 12.0002C22.0002 6.4862 17.5142 2 12.0002 2ZM17.0002 9.0002C17.0002 9.2762 16.7762 9.5002 16.5002 9.5002H8.5002C8.2242 9.5002 8.0002 9.2762 8.0002 9.0002V8.0002C8.0002 7.7242 8.2242 7.5002 8.5002 7.5002H16.5002C16.7762 7.5002 17.0002 7.7242 17.0002 8.0002V9.0002ZM17.0002 13.0002C17.0002 13.2762 16.7762 13.5002 16.5002 13.5002H8.5002C8.2242 13.5002 8.0002 13.2762 8.0002 13.0002V12.0002C8.0002 11.7242 8.2242 11.5002 8.5002 11.5002H16.5002C16.7762 11.5002 17.0002 11.7242 17.0002 12.0002V13.0002ZM17.0002 17.0002C17.0002 17.2762 16.7762 17.5002 16.5002 17.5002H8.5002C8.2242 17.5002 8.0002 17.2762 8.0002 17.0002V16.0002C8.0002 15.7242 8.2242 15.5002 8.5002 15.5002H16.5002C16.7762 15.5002 17.0002 15.7242 17.0002 16.0002V17.0002Z" fill="currentColor"/>
-            </svg>
-          Instagram
-        </a>
-        <a href="#" className="social-media-item">
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M20.941 6.0094C20.219 6.3079 19.467 6.4952 18.7045 6.5746C19.5395 6.0821 20.1805 5.292 20.4855 4.3414C19.7045 4.8119 18.847 5.143 17.9485 5.311C17.2045 4.5422 16.166 4.0722 15.0195 4.0722C12.7535 4.0722 10.916 5.9221 10.916 8.2042C10.916 8.5303 10.9575 8.8504 11.0285 9.1627C8.1635 9.0204 5.568 7.5518 3.821 5.3499C3.521 5.8606 3.344 6.4526 3.344 7.0768C3.344 8.5303 4.098 9.7901 5.241 10.5133C4.568 10.4965 3.918 10.3182 3.3395 10.0152C3.3395 10.0298 3.3395 10.0445 3.3395 10.0592C3.3395 12.0628 4.7435 13.7196 6.6435 14.0934C6.2745 14.1953 5.8825 14.2492 5.4805 14.2492C5.201 14.2492 4.935 14.2238 4.673 14.1729C5.1955 15.8297 6.741 17.0655 8.5995 17.0984C7.1555 18.2323 5.294 18.8953 3.3105 18.8953C2.969 18.8953 2.6285 18.8785 2.296 18.8385C4.2475 20.0883 6.5405 20.8035 9.0065 20.8035C15.0145 20.8035 18.3755 15.8569 18.3755 11.5173C18.3755 11.3653 18.3705 11.2158 18.3615 11.0664C19.0115 10.6093 19.6015 10.0683 20.1265 9.4678C19.5315 9.7212 18.8895 9.8829 18.2245 9.9572C18.9195 9.5445 19.4615 8.872 19.7215 8.0829C19.0885 8.4615 18.397 8.7297 17.6745 8.8688C17.0505 8.2104 16.2725 7.7818 15.3975 7.6258" fill="currentColor"/>
-            </svg>
-          Twitter
-        </a>
-      </div>
-    </div>
-  );
-};
-
-export default App;
+      </footer>
+    );
+  };
