@@ -2,7 +2,8 @@ import Navbar from "./TopNav"
 import { useNavigate } from "react-router-dom";
 import Footer from "./cFooter"
 import './Landing.css';
-
+import EconomicSupport from "../EconomicSupport/EconomicSupport";
+//import People from "@assets/people.png";
 
 export const Testimonials = () => {
     const testimonials = [
@@ -91,10 +92,10 @@ export const Testimonials = () => {
     );
 };
 
-export default () => {
+function Landing(){
     const navigate = useNavigate();
     function handleStart(){
-        navigate('/jobsearch');
+        navigate('/auth/sign-in');
     }
   
     return (
@@ -102,32 +103,23 @@ export default () => {
             <Navbar />
             <div className='Container'>
                 <div className='txtContainer'>
-                <h2 id="Description" className="text-3xl font-bold text-white mb-4">
-                 Designed for Women,<br />
-                 Powered by AI
-                </h2>
-                    <p id="briefDescription" className="text-center text-lg font-medium leading-relaxed">
-    Connect with your community<br />
-    Access Job opportunities<br />
-    Track your Spending<br />
-    Grow your savings<br />
-    Report incidents safely,<br />
-    all in one secure, supportive platform
-  </p>
+                    <h2 id='Description'>
+                        Designed for Women,<br />
+                        Powered by AI
+                    </h2>
+                    <p id='briefDescription'>
+                        Connect with your community<br />
+                        Access Job oportunities<br />
+                        Track your Spending<br />
+                        Grow your savings<br />
+                        Report incidents safely,<br />
+                        all in one secure, supportive platform<br />
+                    </p>
                     <button type='submit' id='getStartedBtn' onClick={handleStart}>Get Started</button>
                 </div>
-                <div className="backgroundthingy">
-
-                
-                 <div className='imgContainer'>
-                 <img
-                      src="/img/People.png"
-                      // className="h-full w-full"
-                      style={{position: 'relative', width: '700px', right: '-10px'}}
-                    alt="Decorative pattern"
-        />
-                </div>
-                 </div>
+                {/* <div className='imgContainer'>
+                    <img src={People} id='peoplesIMG' />
+                </div> */}
             </div>
             <hr />
             <div className="services">
@@ -167,3 +159,5 @@ export default () => {
         </>
     );
 };
+
+export default Landing;
