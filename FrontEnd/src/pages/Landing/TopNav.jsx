@@ -19,7 +19,7 @@ const Navbar = () => {
     <nav
       className="navbar"
       style={{
-        background: 'linear-gradient(to right, #ffe6f0, #fff0f5)', // Smooth pink gradient
+        background: 'linear-gradient(to right, #ffe6f0, #fff0f5)', 
         padding: '1rem 2.5rem',
         display: 'flex',
         justifyContent: 'space-between',
@@ -36,33 +36,43 @@ const Navbar = () => {
         className="logo-container"
         style={{ display: 'flex', alignItems: 'center' }}
       >
-        <div
-          className="logo"
-          style={{
-            marginRight: '20px',
-            fontSize: '28px',
-            color: '#ff4d94', // Brighter pink
-            transform: 'scale(1.2)',
-          }}
-        >
-            {/* <img
-                src={logo}
-                alt="Logo"
-                style={{ width: '40px', height: '40px', borderRadius: '50%' }}
-            /> */}
-        </div>
-        <div
-          className="brand-name"
-          style={{
-            fontSize: '22px',
-            fontWeight: '700',
-            color: '#880E4F',
-            fontFamily: 'Poppins, sans-serif',
-          }}
-        >
-          UbuntuFlow
-        </div>
-      </div>
+     <div
+  className="header"
+  style={{
+    display: 'flex',
+    alignItems: 'center',
+  }}
+>
+  <div
+    className="logo"
+    style={{
+      marginRight: '20px',
+      transform: 'scale(1.2)',
+      position: 'relative',
+      top: '-6px', 
+    }}
+  >
+    <img
+      src="/img/Logo.png"
+      alt="Decorative pattern"
+      style={{ height: '40px', width: 'auto' }} 
+    />
+  </div>
+
+  <div
+    className="brand-name"
+    style={{
+      fontSize: '22px',
+      fontWeight: '700',
+      color: '#880E4F',
+      fontFamily: 'Poppins, sans-serif',
+    }}
+  >
+    UbuntuFlow
+  </div>
+</div>
+</div>
+
 
       {/* Navigation Links */}
       <div

@@ -6,7 +6,10 @@ import {
   ServerStackIcon,
   RectangleStackIcon,
 } from "@heroicons/react/24/solid";
-import { Home, Profile, Tables, Notifications } from "@/pages/dashboard";
+import { Home, Tables, Notifications } from "@/pages/dashboard";
+import Profile from "@/pages/Profile/profile"
+import Chat from "@/pages/ChatBoard/ChatAI"
+import Community from "@/pages/Community/Community"
 import { SignIn, SignUp } from "@/pages/auth";
 import JobSearchPage from "./pages/JobSearch/JobSearch.jsx";
 import EconomicSupport from "./pages/EconomicSupport/EconomicSupport.jsx";
@@ -54,6 +57,18 @@ export const routes = [
         name: "notifications",
         path: "/notifications",
         element: <Notifications />,
+      },
+      {
+        icon: <InformationCircleIcon {...icon} />,
+        name: "ChatAI",
+        path: "/chat",
+        element: <Chat />,
+      },
+      {
+        icon: <UserCircleIcon {...icon} />,
+        name: "Community",
+        path: "/community",
+        element: <Community />,
       },
     ],
   },
