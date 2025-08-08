@@ -27,7 +27,7 @@ export function SignIn() {
     setError("");
 
     try {
-      const response = await fetch("http://localhost:3000/auth/api/login", {
+      const response = await fetch("http://localhost:3000/api/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -46,9 +46,10 @@ export function SignIn() {
         throw new Error(data.message || "Login failed");
       }
 
-      // Handle successful login (e.g., redirect or store token)
+      
       console.log("Login successful", data);
-      // You might want to redirect here or handle the auth token
+      navigate('/dashboard/home');
+      
     } catch (err) {
       setError(err.message || "An error occurred during login");
     } finally {
@@ -63,7 +64,7 @@ export function SignIn() {
           <Typography variant="h2" className="font-bold mb-4">Sign In</Typography>
           <Typography variant="paragraph" color="blue-gray" className="text-lg font-normal">Enter your email and password to Sign In.</Typography>
         </div>
-        <form onSubmit={handleStart} className="mt-8 mb-2 mx-auto w-80 max-w-screen-lg lg:w-1/2">
+        <form onSubmit={handleSubmit} className="mt-8 mb-2 mx-auto w-80 max-w-screen-lg lg:w-1/2">
           {error && (
             <Typography color="red" className="mb-4 text-center">
               {error}

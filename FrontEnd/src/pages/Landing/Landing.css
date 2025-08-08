@@ -47,6 +47,7 @@ hr{
   border-radius: 15px;
   margin: 2rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: 560px;
 }
 
 /*
@@ -99,19 +100,24 @@ hr{
   - Styles the image section on the right.
 */
 .imgContainer {
-  width: 100%;
-  max-width: 500px;
+ 
+  /* max-width: 490px; */
   margin-top: 2rem;
-  background-color: var(--headingsClr);
-    /* width: 90%; */
-    height: 100%;
+  /* background-color: var(--headingsClr); */
+  height: 100%;
+
+  
+  border-top-left-radius: 2rem;   
+  border-top-right-radius: 2rem;
 }
 
-#peoplesIMG {
-  width: 100%;
-  height: auto;
-  border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+.backgroundthingy {
+  border-top-left-radius: 2rem;   
+  border-top-right-radius: 2rem;
+  width: 620px;
+  background-color: var(--headingsClr);
+  position: relative;
+  right: -100px;
 }
 
 /*

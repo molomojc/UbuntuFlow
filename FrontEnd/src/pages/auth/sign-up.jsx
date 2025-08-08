@@ -36,18 +36,17 @@ export function SignUp() {
     
     
     try {
-      const response = await fetch("http://localhost:3000/auth/api/register", {
+      const response = await fetch("http://localhost:3000/api/auth/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
+          name: formData.firstName,
+          surname: formData.lastName,
           email: formData.email,
-          firstName: formData.firstName,
-          lastName: formData.lastName,
           password: formData.password,
-          agreeTerms: formData.agreeTerms
-        }),
+        }),       
       });
 
       const data = await response.json();
@@ -59,11 +58,11 @@ export function SignUp() {
       // Handle successful registration (e.g., redirect or show success message)
       console.log("Registration successful", data);
 
-      navigate('/dashboard/home');
+      navigate('/auth/sign-in');
       // You might want to redirect here or show a success message
     } catch (err) {
       setError(err.message || "An error occurred during registration");
-      navigate('/dashboard/home');
+      
     } finally {
       setIsLoading(false);
     }
@@ -89,7 +88,7 @@ export function SignUp() {
             Enter your email and password to register.
           </Typography>
         </div>
-        <form onSubmit={handleStart} className="mt-8 mb-2 mx-auto w-80 max-w-screen-lg lg:w-1/2">
+        <form onSubmit={handleSubmit} className="mt-8 mb-2 mx-auto w-80 max-w-screen-lg lg:w-1/2">
           {error && (
             <Typography color="red" className="mb-4 text-center">
               {error}
