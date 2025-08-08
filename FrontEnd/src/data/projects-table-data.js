@@ -1,24 +1,24 @@
 export const projectsTableData = [
   {
     img: "/img/logo-xd.svg",
-    name: "Material XD Version",
+    name: "December Girls Trip",
     members: [
       { img: "/img/team-1.jpeg", name: "Romina Hadid" },
       { img: "/img/team-2.jpeg", name: "Ryan Tompson" },
       { img: "/img/team-3.jpeg", name: "Jessica Doe" },
       { img: "/img/team-4.jpeg", name: "Alexander Smith" },
     ],
-    budget: "$14,000",
+    budget: "R14,000",
     completion: 60,
   },
   {
     img: "/img/logo-atlassian.svg",
-    name: "Add Progress Track",
+    name: "Family Event",
     members: [
       { img: "/img/team-2.jpeg", name: "Ryan Tompson" },
       { img: "/img/team-4.jpeg", name: "Alexander Smith" },
     ],
-    budget: "$3,000",
+    budget: "R3,000",
     completion: 10,
   },
   {
@@ -33,21 +33,21 @@ export const projectsTableData = [
   },
   {
     img: "/img/logo-spotify.svg",
-    name: "Launch our Mobile App",
+    name: "November 21st Birthday Party",
     members: [
       { img: "/img/team-4.jpeg", name: "Alexander Smith" },
       { img: "/img/team-3.jpeg", name: "Jessica Doe" },
       { img: "/img/team-2.jpeg", name: "Ryan Tompson" },
       { img: "/img/team-1.jpeg", name: "Romina Hadid" },
     ],
-    budget: "$20,500",
+    budget: "R20,500",
     completion: 100,
   },
   {
     img: "/img/logo-jira.svg",
-    name: "Add the New Pricing Page",
+    name: "Buy a new Phone",
     members: [{ img: "/img/team-4.jpeg", name: "Alexander Smith" }],
-    budget: "$500",
+    budget: "R500",
     completion: 25,
   },
   {
@@ -57,7 +57,7 @@ export const projectsTableData = [
       { img: "/img/team-1.jpeg", name: "Romina Hadid" },
       { img: "/img/team-4.jpeg", name: "Alexander Smith" },
     ],
-    budget: "$2,000",
+    budget: "R2,000",
     completion: 40,
   },
 ];
