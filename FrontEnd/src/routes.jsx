@@ -1,7 +1,7 @@
 import {
   HomeIcon,
   UserCircleIcon,
-  TableCellsIcon,
+  // TableCellsIcon,
   InformationCircleIcon,
   ServerStackIcon,
   RectangleStackIcon,
@@ -11,8 +11,8 @@ import Profile from "@/pages/Profile/profile"
 import Chat from "@/pages/ChatBoard/ChatAI"
 import Community from "@/pages/Community/Community"
 import { SignIn, SignUp } from "@/pages/auth";
-import JobSearchPage from "./pages/JobSearch/JobSearch.jsx";
-import EconomicSupport from "./pages/EconomicSupport/EconomicSupport.jsx";
+import JobSearchPage from "@/pages/JobSearch/JobSearch.jsx";
+import EconomicSupport from "@/pages/EconomicSupport/EconomicSupport.jsx";
 
 const icon = {
   className: "w-5 h-5 text-inherit",
@@ -46,12 +46,7 @@ export const routes = [
         path: "/profile",
         element: <Profile />,
       },
-      {
-        icon: <TableCellsIcon {...icon} />,
-        name: "tables",
-        path: "/tables",
-        element: <Tables />,
-      },
+      
       {
         icon: <InformationCircleIcon {...icon} />,
         name: "notifications",
