@@ -7,9 +7,50 @@ import {
 } from "@material-tailwind/react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 
 export function SignIn() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [rememberMe, setRememberMe] = useState(false);
+  const [newsletter, setNewsletter] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsLoading(true);
+    setError("");
+
+    try {
+      const response = await fetch("http://localhost:3000/auth/api/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email,
+          password,
+          rememberMe,
+          subscribeToNewsletter: newsletter,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message || "Login failed");
+      }
+
+      // Handle successful login (e.g., redirect or store token)
+      console.log("Login successful", data);
+      // You might want to redirect here or handle the auth token
+    } catch (err) {
+      setError(err.message || "An error occurred during login");
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
     <section className="m-8 flex gap-4">
       <div className="w-full lg:w-3/5 mt-24">
@@ -74,8 +115,8 @@ export function SignIn() {
             checked={rememberMe}
             onChange={(e) => setRememberMe(e.target.checked)}
           />
-          <Button className="mt-6" fullWidth>
-            Sign In
+          <Button type="submit" className="mt-6" fullWidth disabled={isLoading}>
+            {isLoading ? "Signing In..." : "Sign In"}
           </Button>
 
           <div className="flex items-center justify-between gap-2 mt-6">
