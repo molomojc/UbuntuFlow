@@ -1,0 +1,8 @@
+/* =============Setting colours, fonts and more=================== */
+:root{
+    /* Colors */
+  --background: #f9d5d3;
+  --buttons: #ff5c8a;
+  --headingsANDlogo: #e91e63;
+  --hoverStates: #880e4f;
+}

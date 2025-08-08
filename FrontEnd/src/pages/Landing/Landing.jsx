@@ -2,6 +2,7 @@ import Navbar from "./TopNav"
 import { useNavigate } from "react-router-dom";
 import Footer from "./cFooter"
 import './Landing.css';
+import EconomicSupport from "../EconomicSupport/EconomicSupport";
 //import People from "@assets/people.png";
 
 export const Testimonials = () => {
@@ -94,7 +95,7 @@ export const Testimonials = () => {
 export default () => {
     const navigate = useNavigate();
     function handleStart(){
-        navigate('/auth/sign-in');
+        navigate('/jobsearch');
     }
   
     return (

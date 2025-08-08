@@ -8,6 +8,8 @@ import {
 } from "@heroicons/react/24/solid";
 import { Home, Profile, Tables, Notifications } from "@/pages/dashboard";
 import { SignIn, SignUp } from "@/pages/auth";
+import JobSearchPage from "./pages/JobSearch/JobSearch.jsx";
+import EconomicSupport from "./pages/EconomicSupport/EconomicSupport.jsx";
 
 const icon = {
   className: "w-5 h-5 text-inherit",
@@ -22,6 +24,18 @@ export const routes = [
         name: "dashboard",
         path: "/home",
         element: <Home />,
+      },
+      {
+        icon: <HomeIcon {...icon} />,
+        name: "esupport",
+        path: "/esupport",
+        element: <EconomicSupport />,
+      },
+      {
+        icon: <HomeIcon {...icon} />,
+        name: "jobsearch",
+        path: "/jobsearch",
+        element: <JobSearchPage />,
       },
       {
         icon: <UserCircleIcon {...icon} />,
