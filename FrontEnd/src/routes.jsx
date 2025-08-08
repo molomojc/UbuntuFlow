@@ -11,6 +11,8 @@ import Profile from "@/pages/Profile/profile"
 import Chat from "@/pages/ChatBoard/ChatAI"
 import Community from "@/pages/Community/Community"
 import { SignIn, SignUp } from "@/pages/auth";
+import JobSearchPage from "./pages/JobSearch/JobSearch.jsx";
+import EconomicSupport from "./pages/EconomicSupport/EconomicSupport.jsx";
 
 const icon = {
   className: "w-5 h-5 text-inherit",
@@ -25,6 +27,18 @@ export const routes = [
         name: "dashboard",
         path: "/home",
         element: <Home />,
+      },
+      {
+        icon: <HomeIcon {...icon} />,
+        name: "esupport",
+        path: "/esupport",
+        element: <EconomicSupport />,
+      },
+      {
+        icon: <HomeIcon {...icon} />,
+        name: "jobsearch",
+        path: "/jobsearch",
+        element: <JobSearchPage />,
       },
       {
         icon: <UserCircleIcon {...icon} />,

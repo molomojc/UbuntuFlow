@@ -76,15 +76,17 @@ export function Home() {
             <div>
               <Typography variant="h6" color="blue-gray" className="mb-1">
                 Goals
+                Goals
               </Typography>
               <Typography
                 variant="small"
                 className="flex items-center gap-1 font-normal text-blue-gray-600"
               >
                 <CheckCircleIcon strokeWidth={3} className="h-4 w-4 text-blue-gray-200" />
-                <strong>10 done</strong> this Year
+                <strong>30 done</strong> this month
               </Typography>
             </div>
+            {/* =======3 dots menu========= */}
             <Menu placement="left-start">
               <MenuHandler>
                 <IconButton size="sm" variant="text" color="blue-gray">
@@ -103,26 +105,28 @@ export function Home() {
             </Menu>
           </CardHeader>
           <CardBody className="overflow-x-scroll px-0 pt-0 pb-2">
+            {/* =========A table of goals */}
             <table className="w-full min-w-[640px] table-auto">
               <thead>
                 <tr>
-                  {["Names", "members", "budget", "completion"].map(
+                  {["companies", "members", "budget", "completion"].map(
                     (el) => (
                       <th
                         key={el}
                         className="border-b border-blue-gray-50 py-3 px-6 text-left"
                       >
-                        <Typography
-                          variant="small"
-                          className="text-[11px] font-medium uppercase text-blue-gray-400"
-                        >
-                          {el}
-                        </Typography>
+                      <Typography
+                        variant="small"
+                        className="text-[11px] font-medium uppercase text-blue-gray-400"
+                      >
+                        {el}
+                      </Typography>
                       </th>
                     )
                   )}
                 </tr>
               </thead>
+              {/* TODO: Check this out */}
               <tbody>
                 {projectsTableData.map(
                   ({ img, name, members, budget, completion }, key) => {
@@ -201,7 +205,7 @@ export function Home() {
             className="m-0 p-6"
           >
             <Typography variant="h6" color="blue-gray" className="mb-2">
-              Transactions
+              Orders Overview
             </Typography>
             <Typography
               variant="small"

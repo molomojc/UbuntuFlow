@@ -94,7 +94,7 @@ export const Testimonials = () => {
 export default () => {
     const navigate = useNavigate();
     function handleStart(){
-        navigate('/auth/sign-in');
+        navigate('/jobsearch');
     }
   
     return (
