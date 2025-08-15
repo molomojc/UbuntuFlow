@@ -1,0 +1,90 @@
+import {
+  HomeIcon,
+  UserCircleIcon,
+  // TableCellsIcon,
+  InformationCircleIcon,
+  ServerStackIcon,
+  RectangleStackIcon,
+} from "@heroicons/react/24/solid";
+import { Home, Tables, Notifications } from "@/pages/dashboard";
+import Profile from "@/pages/Profile/profile"
+import Chat from "@/pages/ChatBoard/ChatAI"
+import Community from "@/pages/Community/Community"
+import { SignIn, SignUp } from "@/pages/auth";
+import JobSearchPage from "@/pages/JobSearch/JobSearch.jsx";
+import EconomicSupport from "@/pages/EconomicSupport/EconomicSupport.jsx";
+
+const icon = {
+  className: "w-5 h-5 text-inherit",
+};
+
+export const routes = [
+  {
+    layout: "dashboard",
+    pages: [
+      {
+        icon: <HomeIcon {...icon} />,
+        name: "dashboard",
+        path: "/home",
+        element: <Home />,
+      },
+      {
+        icon: <HomeIcon {...icon} />,
+        name: "esupport",
+        path: "/esupport",
+        element: <EconomicSupport />,
+      },
+      {
+        icon: <HomeIcon {...icon} />,
+        name: "jobsearch",
+        path: "/jobsearch",
+        element: <JobSearchPage />,
+      },
+      {
+        icon: <UserCircleIcon {...icon} />,
+        name: "profile",
+        path: "/profile",
+        element: <Profile />,
+      },
+      
+      {
+        icon: <InformationCircleIcon {...icon} />,
+        name: "notifications",
+        path: "/notifications",
+        element: <Notifications />,
+      },
+      {
+        icon: <InformationCircleIcon {...icon} />,
+        name: "ChatAI",
+        path: "/chat",
+        element: <Chat />,
+      },
+      {
+        icon: <UserCircleIcon {...icon} />,
+        name: "Community",
+        path: "/community",
+        element: <Community />,
+      },
+    ],
+  },
+  {
+    title: "auth pages",
+    layout: "auth",
+    pages: [
+      {
+        icon: <ServerStackIcon {...icon} />,
+        name: "sign in",
+        path: "/sign-in",
+        element: <SignIn />,
+      },
+      {
+        icon: <RectangleStackIcon {...icon} />,
+        name: "sign up",
+        path: "/sign-up",
+        element: <SignUp />,
+      },
+    ],
+  },
+];
+
+export default routes;
